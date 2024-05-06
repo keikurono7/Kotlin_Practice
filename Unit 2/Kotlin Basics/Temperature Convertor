@@ -1,0 +1,25 @@
+fun main() {
+    val ctof : (Double) -> Double = {
+        c -> 9/5*(c) + 32
+    }
+    val ktoc : (Double) -> Double = {
+        k -> k - 273.15
+    }
+    val ftok : (Double) -> Double = {
+        f -> 5/9*(f - 32) + 273.15
+    }
+    printFinalTemperature(270.0,"Celsius","Fahrenheit",ctof)
+    printFinalTemperature(350.0,"kelvin","Celsius",ktoc)
+    printFinalTemperature(10.0,"Fahrenheit","Kelvin",ftok)
+}
+
+
+fun printFinalTemperature(
+    initialMeasurement: Double, 
+    initialUnit: String, 
+    finalUnit: String, 
+    conversionFormula: (Double) -> Double
+) {
+    val finalMeasurement = String.format("%.2f", conversionFormula(initialMeasurement)) // two decimal places
+    println("$initialMeasurement degrees $initialUnit is $finalMeasurement degrees $finalUnit.")
+}
