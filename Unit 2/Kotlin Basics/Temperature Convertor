@@ -1,18 +1,18 @@
 fun main() {
     val ctof : (Double) -> Double = {
-        c -> 9/5*(c) + 32
+        c -> ((9*c)/5) + 32
     }
     val ktoc : (Double) -> Double = {
         k -> k - 273.15
     }
     val ftok : (Double) -> Double = {
-        f -> 5/9*(f - 32) + 273.15
+        f -> ((5*(f - 32))/9) + 273.15
     }
-    printFinalTemperature(270.0,"Celsius","Fahrenheit",ctof)
+    printFinalTemperature(27.0,"Celsius","Fahrenheit",ctof)
     printFinalTemperature(350.0,"kelvin","Celsius",ktoc)
     printFinalTemperature(10.0,"Fahrenheit","Kelvin",ftok)
+    
 }
-
 
 fun printFinalTemperature(
     initialMeasurement: Double, 
